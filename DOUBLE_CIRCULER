@@ -1,0 +1,87 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct node//membuat struktur dari node
+{
+  int data;
+  struct node*next;
+  struct node*prev;
+};
+  void insertEnd (struct node**start,int value)//fungsi untuk menyisipkan diakhir
+{
+if (*start == NULL)
+{
+  struct node*new_node = new_node;
+  new_node->data = value;
+  new_node->next = new_node->prev = new_node;
+  *start=new_node;
+  return;
+  }//jika daftar tidak kosong
+
+  node*last=(*start)->prev;
+  struct node*new_node = new_node;
+  new_node->data=value;
+  //memulai akan menjadi new_node berikutnya
+  new_node->next=*start;
+
+  (*start)->prev=new_node;
+new_node->prev=last;
+last->next=new_node;
+}
+void insertBegin(struct node**start,int value)
+struct node*last=(*start)->prev;
+struct node*new_node=new_node;
+new_node->data=value;
+new_node->next=*start;
+new_node->prev=last;
+last->next=(*start)->prev=new_node;
+*start=new_node;
+}
+void insertAfter(struct node**start int value1
+                                    int value2)
+{ 
+struct node*temp=*start;
+while (temp->data !=value2;
+  temp = temp->next;
+  struct node *next = temp->next;
+  
+  temp->next = new_node;
+  new_node->prev = temp;
+  new_node ->next=next;
+  next->prev =new_node;
+  }
+  void display (struct node*start)
+  {
+    struct node*temp = start;
+    
+    printf("\nTraversal in forward direction \n")
+    while (temp ->next !=start)
+    {
+      printf("%d", temp->data);
+      temp = temp->next;
+      }
+      printf ("%d ", temp->data);
+      printf("nTraversal in reverse direction \n");
+      node *last = start->prev;
+      temp = last;
+      while (temp->prev !=last
+      {
+        printf("%d ", temp->data);
+        temp=temp->prev;
+        }
+        
+        int main() //program utama
+        {
+          struct node*start = NULL;
+          
+          insertEnd(&start, 5);
+          insertBegin(&start, 4);
+          insertEnd(&start, 7);
+          insertEnd(&start, 8);
+          insertAfter(&start, 6, 5);
+          
+          printf("created circular doubly linked list is : ");
+          display(start);
+          return 0;
+          
+          }
