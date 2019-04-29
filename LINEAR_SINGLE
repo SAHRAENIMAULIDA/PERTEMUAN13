@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct mahasiswa {//membuat tipe data struct yg berfungsi menyimpan beberapa tipe data yang berbeda 
+  int no_urut;
+  int NIM;
+  char kelas;
+  
+  mahasiswa*next;//nama struct*next
+  };
+  void printList (mahasiswa*n)//membuat fungsi prinList
+  {
+    while (n!=NULL)//syarat n tidak sama denga NULL
+      {
+        
+        cout<<"no urut : "<<n->no_urut<< " "<<endl;
+        cout<<"NIM : "<<n->NIM<<" "<<endl;
+        cout<<"kelas : "<<n->kelas<<" "<<endl;
+        cout<< " "<<endl;
+        n=n->next;
+        }
+        }
+        int main() 
+        {
+          mahasiswa*first = NULL;
+          mahasiswa*second= NULL;
+          mahasiswa*third= NULL;
+          
+          first = new mahasiswa();
+          second = new mahasiswa();
+          third = new mahasiswa();
+          
+          first->no_urut=01;
+          first->NIM =1829140002;
+          first->kelas = 'B';
+          first ->next=second;
+          
+          
+          second->no_urut=02;
+          second->NIM=1829142014;
+          second->kelas='B';
+          second->next=third;
+          
+          
+          third->no_urut=03;
+          third->NIM=1829140001;
+          third->kelas='B';
+          third->next=NULL;
+          
+          
+          printList(first);
+          
+          cin.get();
+          return 0;
+          
+          }
+          
