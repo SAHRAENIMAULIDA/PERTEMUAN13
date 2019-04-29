@@ -1,0 +1,7 @@
+1.Single Linear Linked List
+Single linear linked list merupakan jenis linked list yang paling sederhana. Untuk seterusnya,  jika dikatakan Linked List maka bentuk inilah yang dimaksud. Linked List ini pada tiap-tiap elemen hanya memiliki 1 pointer (penunjuk) yaitu pointer terhadap elemen selanjutnya
+2.double linear linked list
+Double linear linked list merupakan jenis linked list yang memiliki 2 buah pointer (penunjuk) yaitu pointer terhadap elemen selanjutnya dan juga pointer terhadap elemen sebelumnya
+3.Single Circular Linked List
+Single circular linked list merupakan jenis linked list yang memiliki 1 buah pointer (penunjuk) yaitu pointer terhadap elemen selanjutnyasama seperti single linear linked list), namun pada linked list jenis ini elemen terakhir pada list memiliki pointer menuju elemen  pertama 
+4.Double circular linked list merupakan jenis linked list yang memiliki 2 buah pointer(penunjuk) yaitu pointer terhadap elemen selanjutnya dan juga pointer terhadap elemensebelumnya (sama seperti double linear linked list), namun pada linked list jenis ini elementerakhir pada list memiliki pointer menuju elemen pertama yang menunjukkan elemenselanjutnya dari list tersebut dan elemen pertama memiliki pointer menuju elemen terakhiryang menunjukkan elemen sebelumnya dari elemen pertama adalah elemen terakhir,sehingga terjadi susunan elemen yang melingkar dari dua arah / tidak ada elemen yang bernilai null.
