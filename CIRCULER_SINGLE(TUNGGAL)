@@ -1,0 +1,94 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+struct data {
+int nilai;
+data *next;
+};
+data *head;
+void awal() {
+head = NULL;
+}
+bool isEmpty () {
+if (head==NULL)
+return true;
+return false;
+}
+void tambahdatadepan(int databaru) {
+data *baru;
+baru=(data*)malloc(sizeof(data));
+baru->nilai=databaru;
+baru->next=baru;
+if (isEmpty()) {
+head=baru;
+head->next=head;
+}
+else {
+data *bantu;
+bantu=head;
+while (bantu->next!=head){
+bantu=bantu->next;
+}
+baru->next=head;
+head=baru;
+bantu->next=head;
+}
+}
+void tambahdatabelakang (int databaru){
+data *baru;
+baru=(data*) malloc(sizeof(data));
+baru->nilai=databaru;
+baru->next=baru;
+if (isEmpty()){
+head=baru;
+head->next=head;
+}else {
+data *bantu;
+while (bantu->next!=head){
+bantu=bantu->next;
+}
+bantu->next=baru;
+baru->next=head;
+}
+}
+void hapusdepan() {
+if (isEmpty()){
+if (head->next!=head){
+data *hapus;
+hapus=head;
+data *bantu;
+bantu=head;
+while (bantu->next!=head){
+bantu=bantu->next;
+}
+bantu->next=head->next;
+head=head->next;
+delete hapus;
+}
+else {
+awal();
+}
+}
+}
+void hapusbelakang(){
+}
+void cetak(){
+if (isEmpty ()){
+data *bantu;
+bantu=head;
+do {
+cout<<bantu->nilai<<" ";
+bantu=bantu->next;
+}while (bantu!=head);
+}
+}
+int main(){
+awal();
+tambahdatabelakang(5);
+tambahdatadepan(7);
+tambahdatabelakang(17);
+hapusdepan();
+hapusdepan();
+cetak();
+return 0;
+}
